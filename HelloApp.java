@@ -1,4 +1,4 @@
-public class HelloApp {
+ public class HelloApp {
     public static void main(String[] args) {
 
         // Case 1: No arguments
@@ -7,18 +7,8 @@ public class HelloApp {
             return;
         }
 
-        // Case 2: Build names with trailing delimiter
-        StringBuilder nameBuilder = new StringBuilder();
-
-        for (String name : args) {
-            nameBuilder.append(name).append(", ");
-        }
-
-        // Remove trailing ", "
-        String names = "";
-        if (nameBuilder.length() > 0) {
-            names = nameBuilder.substring(0, nameBuilder.length() - 2);
-        }
+        // Case 2: Join names directly
+        String names = String.join(", ", args);
 
         // Final output
         System.out.println("Hello, " + names + "!");
